@@ -14,7 +14,7 @@ class RedirectController < ApplicationController
       @trace.save
     end
 
-    #redirect_to @url
-    send_file @url, type: "image/gif", disposition: "inline"
+    redirect_to @url
+    #send_file @url, type: "image/gif", disposition: "inline"
   end
 end
