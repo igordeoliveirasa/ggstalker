@@ -15,7 +15,7 @@ class RedirectController < ApplicationController
     end
 
     #redirect_to @url
-    #require 'open-uri'
+    require 'open-uri'
     send_data open(@url).read, type: "image/gif", disposition: "inline"
   end
 end
