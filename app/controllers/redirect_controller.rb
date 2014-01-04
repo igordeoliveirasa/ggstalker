@@ -2,6 +2,7 @@ class RedirectController < ApplicationController
   def index
     @url = params[:redirect_to]
     @trace = Trace.new
+    @trace.save
     @data = params.to_s
 
     logger.debug "AQUI"
@@ -10,8 +11,8 @@ class RedirectController < ApplicationController
     logger.debug "--"
 
     #if Trace.where(:data => @data).empty?
-    @trace.data = @data
-    @trace.save
+    #@trace.data = @data
+    #@trace.save
     #end
 
     redirect_to @url
