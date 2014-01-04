@@ -4,6 +4,11 @@ class RedirectController < ApplicationController
     @trace = Trace.new
     @data = params.to_s
 
+    logger.debug "AQUI"
+    logger.debug @data
+    logger.debug Trace.where(:data => @data).empty?
+    logger.debug "--"
+
     if Trace.where(:data => @data).empty?
       @trace.data = @data
       @trace.save
