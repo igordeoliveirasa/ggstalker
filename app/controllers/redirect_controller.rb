@@ -16,6 +16,6 @@ class RedirectController < ApplicationController
     #@trace.save
     #end
 
-    redirect_to @url
+    #redirect_to @url
   end
 end
