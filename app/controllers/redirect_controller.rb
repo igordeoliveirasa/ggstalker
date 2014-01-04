@@ -15,7 +15,6 @@ class RedirectController < ApplicationController
     end
 
     #redirect_to @url
-    require 'open-uri'
-    send_data open("http://kanbox.it/images/kanbox.png").read, type: "image/gif", disposition: "inline"
+    send_file Rails.root.join('public', "images/spacer.gif"), type: "image/gif", disposition: "inline"
   end
 end
