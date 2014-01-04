@@ -2,7 +2,7 @@ class RedirectController < ApplicationController
   def index
     #@url = params[:redirect_to]
     @trace = Trace.new
-    @data = params.to_s
+    @data = params.to_json
 
     #logger.debug "AQUI"
     #logger.debug @data
