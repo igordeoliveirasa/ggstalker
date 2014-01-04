@@ -2,6 +2,7 @@ class RedirectController < ApplicationController
   def index
     @url = params[:redirect_to]
     @trace = Trace.new
+    @trace.data = "igor"
     @trace.save
     @data = params.to_s
 
