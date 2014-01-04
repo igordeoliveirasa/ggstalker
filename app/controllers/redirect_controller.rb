@@ -9,10 +9,10 @@ class RedirectController < ApplicationController
     logger.debug Trace.where(:data => @data).empty?
     logger.debug "--"
 
-    if Trace.where(:data => @data).empty?
-      @trace.data = @data
-      @trace.save
-    end
+    #if Trace.where(:data => @data).empty?
+    @trace.data = @data
+    @trace.save
+    #end
 
     redirect_to @url
   end
