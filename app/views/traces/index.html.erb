@@ -1,0 +1,27 @@
+<h1>Listing traces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @traces.each do |trace| %>
+      <tr>
+        <td><%= trace.data %></td>
+        <td><%= link_to 'Show', trace %></td>
+        <td><%= link_to 'Edit', edit_trace_path(trace) %></td>
+        <td><%= link_to 'Destroy', trace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trace', new_trace_path %>
