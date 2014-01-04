@@ -4,17 +4,18 @@ class RedirectController < ApplicationController
     @trace = Trace.new
     @data = params.to_s
 
-    logger.debug "AQUI"
-    logger.debug @data
-    logger.debug Trace.where(:data => @data).empty?
-    logger.debug "--"
+    #logger.debug "AQUI"
+    #logger.debug @data
+    #logger.debug Trace.where(:data => @data).empty?
+    #logger.debug "--"
 
     if Trace.where(:data => @data).empty?
       @trace.data = @data
       @trace.save
     end
 
-    redirect_to @url
-    #send_file @url, type: "image/gif", disposition: "inline"
+    #redirect_to @url
+    #require 'open-uri'
+    send_data open(@url).read, type: "image/gif", disposition: "inline"
   end
 end
