@@ -1,6 +1,6 @@
 class RedirectController < ApplicationController
   def index
-    @url = params[:redirect_to]
+    #@url = params[:redirect_to]
     @trace = Trace.new
     @data = params.to_s
 
@@ -16,6 +16,6 @@ class RedirectController < ApplicationController
 
     #redirect_to @url
     require 'open-uri'
-    send_data open(@url).read, type: "image/gif", disposition: "inline"
+    send_data open("http://kanbox.it/images/kanbox.png").read, type: "image/gif", disposition: "inline"
   end
 end
